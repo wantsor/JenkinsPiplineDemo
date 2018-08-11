@@ -14,9 +14,12 @@ docker images
 pwd
 cd ./dockerbuild
 
-# stop container
-if docker ps -a|grep -i wantsor-helloworld ;then
-   docker stop -f wantsor-helloworld
+# stop container 名字还没写对
+dockerContainerId=`docker ps -a|grep -i /ywsj-test/ywsj-wantsor|awk '{print $1}'`
+if [ ! -n "$dockerContainerId" ];then
+   echo $dockerContainerId "is null"
+else
+   docker stop -f $dockerContainerId
 fi
 
 # build to aliyun docker
