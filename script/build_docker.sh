@@ -5,14 +5,14 @@ mkdir ./dockerbuild
 cp ../*/target/*.jar ./dockerbuild
 cp ./Dockerfile ./dockerbuild
 
-export DOCKER_TLS_VERIFY="1"
-export DOCKER_HOST="tcp://master1g7.cs-cn-hangzhou.aliyun.com:23193"
-export DOCKER_CERT_PATH="/Users/liuxian/workspace/yunmengWorkspace/dockerSpace/certFiles"
-
-docker images
+#export DOCKER_TLS_VERIFY="1"
+#export DOCKER_HOST="tcp://master1g7.cs-cn-hangzhou.aliyun.com:23193"
+#export DOCKER_CERT_PATH="/Users/liuxian/workspace/yunmengWorkspace/dockerSpace/certFiles"
 
 # docker login
 docker login -u 18982194190@ywsj -p ywsj194190 registry.cn-hangzhou.aliyuncs.com
+
+docker images
 
 pwd
 cd ./dockerbuild
