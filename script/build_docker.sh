@@ -11,6 +11,9 @@ export DOCKER_CERT_PATH="/Users/liuxian/workspace/yunmengWorkspace/dockerSpace/c
 
 docker images
 
+# docker login
+docker login -u 18982194190@ywsj -p ywsj194190 registry.cn-hangzhou.aliyuncs.com
+
 pwd
 cd ./dockerbuild
 
@@ -19,7 +22,7 @@ dockerContainerId=`docker ps -a|grep -i /ywsj-test/ywsj-wantsor|awk '{print $1}'
 if [ ! -n "$dockerContainerId" ];then
    echo $dockerContainerId "is null"
 else
-   docker stop -f $dockerContainerId
+   docker stop $dockerContainerId
 fi
 
 # build to aliyun docker
