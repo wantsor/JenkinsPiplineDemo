@@ -11,4 +11,11 @@ public class HelloController {
         System.out.println("-------------------------------------");
         return "Hello World";
     }
+
+    @RequestMapping(path = "/helloNew")
+    public String helloWorldNew() {
+        System.out.println("-------------------------------------");
+        return "Hello World new version";
+    }
+
 }
