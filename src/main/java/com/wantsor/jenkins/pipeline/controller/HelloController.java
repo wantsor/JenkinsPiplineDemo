@@ -17,5 +17,10 @@ public class HelloController {
         System.out.println("-------------------------------------");
         return "Hello World new version";
     }
+    @RequestMapping(path = "/helloGitUpdate")
+    public String helloGitUpdate() {
+        System.out.println("-------------------------------------");
+        return "Hello World updated by git";
+    }
 
 }
