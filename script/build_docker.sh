@@ -13,6 +13,12 @@ docker images
 
 pwd
 cd ./dockerbuild
+
+# stop container
+if docker ps -a|grep -i wantsor-helloworld ;then
+   docker stop -f wantsor-helloworld
+fi
+
 # build to aliyun docker
 imagesid=`docker images|grep -i ywsj-test/ywsj-wantsor|awk '{print $3}'`
 if [ ! -n "$imagesid" ]; then
@@ -27,8 +33,6 @@ docker build -t registry-vpc.cn-hangzhou.aliyuncs.com/ywsj-test/ywsj-wantsor:lat
 docker push registry-vpc.cn-hangzhou.aliyuncs.com/ywsj-test/ywsj-wantsor:latest
 
 # docker run with port:8099
-#if docker ps -a|grep -i wantsor-helloworld ;then
-#   docker rm -f wantsor-helloworld
-#fi
+
 
 # docker run -it -d -p 9090:9090 --name wantsor-helloworld registry-vpc.cn-hangzhou.aliyuncs.com/ywsj-test/ywsj-wantsor:latest
