@@ -34,9 +34,9 @@ else
 fi
 # docker rmi registry-vpc.cn-hangzhou.aliyuncs.com/ywsj-test/ywsj-wantsor
 # --force-rm remove image first
-docker build -t registry-vpc.cn-hangzhou.aliyuncs.com/ywsj-test/ywsj-wantsor:latest .
+docker build -t registry.cn-hangzhou.aliyuncs.com/ywsj-test/ywsj-wantsor:latest .
 # push to
-docker push registry-vpc.cn-hangzhou.aliyuncs.com/ywsj-test/ywsj-wantsor:latest
+docker push registry.cn-hangzhou.aliyuncs.com/ywsj-test/ywsj-wantsor:latest
 
 # docker run with port:8099
 
