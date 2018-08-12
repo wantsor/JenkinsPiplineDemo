@@ -18,12 +18,12 @@ pwd
 cd ./dockerbuild
 
 # stop container 名字还没写对
-dockerContainerId=`docker ps -a|grep -i /ywsj-test/ywsj-wantsor|awk '{print $1}'`
-if [ ! -n "$dockerContainerId" ];then
-   echo $dockerContainerId "is null"
-else
-   docker stop $dockerContainerId
-fi
+#dockerContainerId=`docker ps -a|grep -i /ywsj-test/ywsj-wantsor|awk '{print $1}'`
+#if [ ! -n "$dockerContainerId" ];then
+#   echo $dockerContainerId "is null"
+#else
+#   docker stop $dockerContainerId
+#fi
 
 # build to aliyun docker
 imagesid=`docker images|grep -i ywsj-test/ywsj-wantsor|awk '{print $3}'`
@@ -32,6 +32,7 @@ if [ ! -n "$imagesid" ]; then
 else
     docker rmi $imagesid -f
 fi
+
 # docker rmi registry-vpc.cn-hangzhou.aliyuncs.com/ywsj-test/ywsj-wantsor
 # --force-rm remove image first
 docker build -t registry.cn-hangzhou.aliyuncs.com/ywsj-test/ywsj-wantsor:latest .
